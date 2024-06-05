@@ -5,6 +5,7 @@ pcall(require, "luarocks.loader")
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
+local json = require("json")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
@@ -76,10 +77,6 @@ awful.layout.layouts = {
 	awful.layout.suit.fair.horizontal,
 	awful.layout.suit.spiral,
 	awful.layout.suit.spiral.dwindle,
-	awful.layout.suit.max,
-	awful.layout.suit.max.fullscreen,
-	awful.layout.suit.magnifier,
-	awful.layout.suit.corner.nw,
 	-- awful.layout.suit.corner.ne,
 	-- awful.layout.suit.corner.sw,
 	-- awful.layout.suit.corner.se,
@@ -184,6 +181,7 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 local mykernel = require("widgets.kernel")
+--local weather = require("widgets.weather")
 local clock = require("widgets.clock")
 local separator = wibox.widget.textbox()
 separator:set_text(" ")
@@ -245,11 +243,13 @@ awful.screen.connect_for_each_screen(function(s)
 			layout = wibox.layout.fixed.horizontal,
 			mykeyboardlayout,
 			mykernel,
+			--weather,
 			wibox.widget.systray(),
 			separator,
 			clock,
 			separator,
 			s.mylayoutbox,
+			separator,
 		},
 	})
 end)

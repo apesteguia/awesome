@@ -39,7 +39,6 @@ theme.taglist_squares_unsel = "~/.config/awesome/themes/taglist/squarew.png"
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
---theme.menu_submenu_icon = "/usr/share/awesome/themes/openSUSE/submenu.png"
 
 --theme.titlebar_close_button_normal = "/usr/share/awesome/themes/openSUSE/titlebar/close_normal.png"
 --theme.titlebar_close_button_focus  = "/usr/share/awesome/themes/openSUSE/titlebar/close_focus.png"
@@ -82,10 +81,6 @@ theme.wallpaper = "/home/mikel/Imágenes/wallhaven-l8o29q_1920x1080.png"
 -- theme.layout_spiral  = "/usr/share/awesome/themes/openSUSE/layouts/spiralw.png"
 -- theme.layout_dwindle = "/usr/share/awesome/themes/openSUSE/layouts/dwindlew.png"
 --
-
--- theme.opensuse_icon = "~/.config/awesome/themes/icons/CA_Osasuna.png"
--- theme.opensuse_icon = "~/.config/awesome/themes/icons/lua.svg"
---theme.opensuse_icon = "/usr/share/awesome/themes/openSUSE/opensusegeeko.png"
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
