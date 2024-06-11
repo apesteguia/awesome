@@ -185,6 +185,8 @@ local mykernel = require("widgets.kernel")
 local clock = require("widgets.clock")
 local separator = wibox.widget.textbox()
 separator:set_text(" ")
+local comma = wibox.widget.textbox()
+comma:set_text(", ")
 
 awful.screen.connect_for_each_screen(function(s)
 	-- Wallpaper
@@ -243,6 +245,7 @@ awful.screen.connect_for_each_screen(function(s)
 			layout = wibox.layout.fixed.horizontal,
 			mykeyboardlayout,
 			mykernel,
+			comma,
 			--weather,
 			wibox.widget.systray(),
 			separator,
@@ -595,4 +598,6 @@ end)
 client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
+
+awful.spawn.with_shell("lxpolkit")
 -- }}}
