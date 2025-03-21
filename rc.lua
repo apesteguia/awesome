@@ -323,6 +323,14 @@ globalkeys = gears.table.join(
 		awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
 	end),
 
+	awful.key({}, "XF86MonBrightnessUp", function()
+		awful.spawn("brightnessctl s +10%")
+	end, { description = "Subir brillo", group = "brightness" }),
+
+	awful.key({}, "XF86MonBrightnessDown", function()
+		awful.spawn("brightnessctl s 10%-")
+	end, { description = "Bajar brillo", group = "brightness" }),
+
 	awful.key({ modkey }, "e", function()
 		awful.spawn("thunar")
 	end, { description = "show main menu", group = "awesome" }),
