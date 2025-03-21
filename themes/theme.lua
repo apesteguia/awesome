@@ -1,6 +1,6 @@
 theme = {}
 
-theme.font = "Hack Nerd Font 10"
+theme.font = "JetBrainsMono 11"
 theme.bg_normal = "#1c1c1c"
 theme.bg_focus = "#424242"
 theme.bg_urgent = "#ff0000"

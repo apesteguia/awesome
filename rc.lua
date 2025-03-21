@@ -183,6 +183,7 @@ screen.connect_signal("property::geometry", set_wallpaper)
 --local mykernel = require("widgets.kernel")
 --local weather = require("widgets.weather")
 local clock = require("widgets.clock")
+local battery = require("widgets.battery")
 local separator = wibox.widget.textbox()
 separator:set_text(" ")
 local comma = wibox.widget.textbox()
@@ -229,7 +230,7 @@ awful.screen.connect_for_each_screen(function(s)
 	})
 
 	-- Create the wibox
-	s.mywibox = awful.wibar({ position = "top", screen = s, height = 12 })
+	s.mywibox = awful.wibar({ position = "top", screen = s, height = 13 })
 
 	-- Add widgets to the wibox
 	s.mywibox:setup({
@@ -245,6 +246,8 @@ awful.screen.connect_for_each_screen(function(s)
 			layout = wibox.layout.fixed.horizontal,
 			mykeyboardlayout,
 			wibox.widget.systray(),
+			separator,
+			battery,
 			separator,
 			clock,
 			comma,
@@ -307,6 +310,18 @@ globalkeys = gears.table.join(
 	awful.key({ modkey }, "w", function()
 		awful.spawn("chromium")
 	end, { description = "show main menu", group = "awesome" }),
+
+	awful.key({}, "XF86AudioMute", function()
+		awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
+	end),
+
+	awful.key({}, "XF86AudioRaiseVolume", function()
+		awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")
+	end),
+
+	awful.key({}, "XF86AudioLowerVolume", function()
+		awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
+	end),
 
 	awful.key({ modkey }, "e", function()
 		awful.spawn("thunar")
@@ -599,3 +614,5 @@ end)
 -- }}}
 --
 awful.spawn.with_shell("lxpolkit")
+awful.spawn.with_shell("nm-applet")
+awful.spawn.with_shell("pasystray")
