@@ -23,6 +23,6 @@ theme.border_marked = "#91231c"
 theme.taglist_squares_sel = "~/.config/awesome/themes/taglist/squarefw.png"
 theme.taglist_squares_unsel = "~/.config/awesome/themes/taglist/squarew.png"
 
-theme.wallpaper = "~/Imágenes/wallhaven-d6r9ml_1920x1080.png"
+theme.wallpaper = "~/Imagenes/wallhaven-m38dd8_1920x1080.png"
 
 return theme
