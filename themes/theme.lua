@@ -1,8 +1,12 @@
 theme = {}
 
 theme.font = "Hack Nerd Font 10"
-theme.bg_normal = "#1c1c1c"
+--theme.font = "SF Pro semibold 10"
+--theme.font = "Inter 11"
+theme.bg_normal = "#121212"
 theme.bg_focus = "#424242"
+--theme.bg_focus = "#0d2e63"
+--theme.bg_focus = "#27384d"
 theme.bg_urgent = "#ff0000"
 theme.bg_minimize = "#444444"
 theme.bg_systray = theme.bg_normal
@@ -23,6 +27,6 @@ theme.border_marked = "#91231c"
 theme.taglist_squares_sel = "~/.config/awesome/themes/taglist/squarefw.png"
 theme.taglist_squares_unsel = "~/.config/awesome/themes/taglist/squarew.png"
 
-theme.wallpaper = "~/Imágenes/wallhaven-d6r9ml_1920x1080.png"
+theme.wallpaper = "~/Imágenes/ahora.png"
 
 return theme

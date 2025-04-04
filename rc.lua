@@ -59,7 +59,8 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 -- This is used later as the default terminal and editor to run.
 beautiful.init(gears.filesystem.get_configuration_dir() .. "./themes/theme.lua")
 
-terminal = "wezterm"
+--terminal = "wezterm"
+terminal = "ghostty"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -305,7 +306,7 @@ globalkeys = gears.table.join(
 	end, { description = "open a terminal", group = "launcher" }),
 
 	awful.key({ modkey }, "w", function()
-		awful.spawn("chromium")
+		awful.spawn("brave")
 	end, { description = "show main menu", group = "awesome" }),
 
 	awful.key({ modkey }, "e", function()
@@ -584,6 +585,9 @@ client.connect_signal("request::titlebars", function(c)
 		layout = wibox.layout.align.horizontal,
 	})
 end)
+
+beautiful.useless_gap = 0.5
+beautiful.gap_single_client = false
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
