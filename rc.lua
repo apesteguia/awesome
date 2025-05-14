@@ -306,7 +306,7 @@ globalkeys = gears.table.join(
 	end, { description = "open a terminal", group = "launcher" }),
 
 	awful.key({ modkey }, "w", function()
-		awful.spawn("brave")
+		awful.spawn("zen-browser")
 	end, { description = "show main menu", group = "awesome" }),
 
 	awful.key({ modkey }, "e", function()
